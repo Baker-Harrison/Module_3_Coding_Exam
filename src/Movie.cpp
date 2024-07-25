@@ -16,17 +16,17 @@ Movie::Movie(string Name, Person Director,vector<Person> Cast,  int RunTime )
 
 
 ostream &operator<<(ostream &strm, const Movie obj) {
-	static int RunTime = obj.getRunTime();
+
 	strm << "Movie Name: " << obj.getName() << endl
-			<< "Director: " << obj.getDirector().getFirstName() << ' ' << obj.getDirector().getLastName() << endl;
+			<< "Director: " << obj.getDirector().getFirstName() << ' ' << obj.getDirector().getLastName() << ", born " << obj.getDirector().getDateOfBirth() << endl;
 			int counter = 1;
 			for (Person person : obj.getCast())
 			{
-				strm << "Cast member " << counter << ": " <<  person.getFirstName() << ' ' << person.getLastName() << endl;
+				strm << "Cast member " << counter << ": " <<  person.getFirstName() << ' ' << person.getLastName() << ", born " << person.getDateOfBirth() << endl;
 				counter++;
 			}
 			strm << "runTime: " << obj.getRunTime() << " minutes" << endl
-			<< "is a long movie: " << ((Movie::isLongMovie(RunTime)) ? "Yes" : "No");
+			<< "is a long movie: " << ((Movie::isLongMovie(obj.getRunTime())) ? "Yes" : "No");
 	return strm;
 
 }
