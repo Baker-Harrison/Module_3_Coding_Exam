@@ -60,6 +60,7 @@ void testItineraryCity()
 
 	Itinerary itinerary3;
 
+
 	itinerary3 + itinerary1 + itinerary2;
 
 	cout << "Total distance: " << itinerary3.getDistance() << endl;
